@@ -1,6 +1,14 @@
 import openai
+import os
+
+OPENAI_API_KEY = 'OPENAI_API_KEY'
 
 def main():
+    openpi_api_key = os.getenv(OPENAI_API_KEY)
+    if openpi_api_key == None:
+        print("OPENAI_API_KEY required")
+        exit(-1)
+        
     print("PyChat v0.1")
     # openai.api_key = "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"
     query = input("Input: ")
